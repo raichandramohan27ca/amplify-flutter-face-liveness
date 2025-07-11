@@ -1,17 +1,17 @@
 import Flutter
 import UIKit
 
-public class FaceLivenessPlugin: NSObject, FlutterPlugin {
+public class FaceLivenessDetectorPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
         let handler = EventStreamHadler()
         let eventChannel = FlutterEventChannel(name: "face_liveness_event", binaryMessenger: registrar.messenger())
         eventChannel.setStreamHandler(handler)
         
-        let instance = FaceLivenessPlugin()
+        let instance = FaceLivenessDetectorPlugin()
         let factory = FaceLivenessViewFactory(messenger: registrar.messenger(), handler: handler)
         registrar.register(factory, withId: "face_liveness_view")
         
-        print("FaceLivenessPlugin initialized with custom credentials provider")
+        print("FaceLivenessDetectorPlugin initialized with custom credentials provider")
     }
 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
