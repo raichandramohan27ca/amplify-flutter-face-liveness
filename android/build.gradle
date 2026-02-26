@@ -81,10 +81,10 @@ dependencies {
     implementation 'com.amplifyframework:core:2.27.0'
 
     // Support for Java 8 features
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
 
     // FaceLivenessDetector dependency
-    implementation 'com.amplifyframework.ui:liveness:1.4.0'
+    implementation 'com.amplifyframework.ui:liveness:1.9.0'
 
     // Amplify Auth dependency with all required modules
     implementation 'com.amplifyframework:aws-auth-cognito:2.27.0'
