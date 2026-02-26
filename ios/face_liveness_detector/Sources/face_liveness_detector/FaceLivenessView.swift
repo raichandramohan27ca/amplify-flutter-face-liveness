@@ -33,6 +33,7 @@ class FaceLivenessView: NSObject, FlutterPlatformView {
             rootView: NativeView(
                 sessionId: args["sessionId"] as! String,
                 region: args["region"] as! String,
+                disableStartView: (args["disableStartView"] as! NSNumber).boolValue,
                 handler: handler
             )
         )
@@ -58,13 +59,15 @@ class FaceLivenessView: NSObject, FlutterPlatformView {
 struct NativeView: View {
     let sessionId: String
     let region: String
+    let disableStartView: Bool
     let handler: EventStreamHadler
     
     @State private var isPresentingLiveness = true
     
-    init(sessionId: String, region: String, handler: EventStreamHadler) {
+    init(sessionId: String, region: String, disableStartView: Bool,  handler: EventStreamHadler) {
         self.sessionId = sessionId
         self.region = region
+        self.disableStartView = disableStartView
         self.handler = handler
     }
 
@@ -72,6 +75,7 @@ struct NativeView: View {
         FaceLivenessDetectorView(
             sessionID: self.sessionId,
             region: self.region,
+            disableStartView: self.disableStartView,
             isPresented: $isPresentingLiveness,
             onCompletion: { result in
                 switch result {
