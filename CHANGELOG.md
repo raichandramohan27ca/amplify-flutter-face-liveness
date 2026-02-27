@@ -1,3 +1,9 @@
+## 0.2.9
+
+* Updated Android libraries for Android 16 KB page size support
+* Bumped desugar_jdk_libs to 2.1.5
+* Bumped Amplify UI Liveness SDK to 1.9.0
+
 ##0.2.8
 * updated ios plugin class name
 
