@@ -1,6 +1,7 @@
-## 0.2.10
+## 0.2.11
 
 * amplify upgrade 
+
 ## 0.2.10
 
 * Updated pubspec.yaml
