@@ -1,6 +1,6 @@
 name: face_liveness_detector
 description: A Flutter plugin for AWS Rekognition Face Liveness detection.
-version: 0.2.9
+version: 0.2.10
 homepage: https://github.com/raichandramohan27ca/amplify-flutter-face-liveness
 repository: https://github.com/raichandramohan27ca/amplify-flutter-face-liveness
 issue_tracker: https://github.com/raichandramohan27ca/amplify-flutter-face-liveness/issues
@@ -23,8 +23,8 @@ flutter:
   plugin:
     platforms:
       android:
-        package: br.com.webeleven.face_liveness_detector
-        pluginClass: FaceLivenessDetectorPlugin
+        package: br.com.webeleven.rekognitionFaceLiveness.rekognition_face_liveness
+        pluginClass: RekognitionFaceLivenessPlugin
       ios:
         pluginClass: FaceLivenessDetectorPlugin
         podspec: ios/face_liveness_detector.podspec

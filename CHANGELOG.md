@@ -1,3 +1,7 @@
+## 0.2.10
+
+* Updated pubspec.yaml
+
 ## 0.2.9
 
 * Updated Android libraries for Android 16 KB page size support
