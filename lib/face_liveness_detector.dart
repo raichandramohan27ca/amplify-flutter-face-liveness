@@ -14,6 +14,10 @@ class FaceLivenessDetector extends StatefulWidget {
   /// The AWS region where the Face Liveness session was created.
   final String region;
 
+  /// Optional parameter for the disabling the intial view with instructions,
+  /// default = false
+  final bool disableStartView;
+
   /// Callback that is called when face liveness check is completed successfully.
   final VoidCallback? onComplete;
 
@@ -25,12 +29,15 @@ class FaceLivenessDetector extends StatefulWidget {
   ///
   /// [sessionId] is required and must be a valid AWS Rekognition Face Liveness session ID.
   /// [region] is required and must be a valid AWS region where the session was created.
+  /// [disableStartView] is not required and allows disable initial view for your 
+  /// bussines logic purpose.
   /// [onComplete] is called when the face liveness check is completed successfully.
   /// [onError] is called when an error occurs during the face liveness check.
   const FaceLivenessDetector({
     super.key,
     required this.sessionId,
     required this.region,
+    this.disableStartView = false,
     this.onComplete,
     this.onError,
   });
@@ -63,6 +70,7 @@ class _FaceLivenessDetectorState extends State<FaceLivenessDetector> {
         creationParams: {
           'sessionId': widget.sessionId,
           'region': widget.region,
+          'disableStartView': widget.disableStartView,
         },
         creationParamsCodec: const StandardMessageCodec(),
       );
@@ -73,6 +81,7 @@ class _FaceLivenessDetectorState extends State<FaceLivenessDetector> {
       creationParams: {
         'sessionId': widget.sessionId,
         'region': widget.region,
+        'disableStartView': widget.disableStartView,
       },
       creationParamsCodec: const StandardMessageCodec(),
     );
